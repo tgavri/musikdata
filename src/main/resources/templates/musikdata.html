@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Musikdata</title>
+    <link rel="stylesheet" href="../static/css/musikdata.css" th:href="@{css/musikdata.css}">
+</head>
+<body>
+<h1>Musik liste af hip hop klassikere</h1>
+<table class="center">
+    <thead>
+    <tr class="overskrift">
+        <th>Band:</th>
+        <th>Song Name:</th>
+        <th>Album</th>
+        <th>Release Date</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="list : ${data}">
+        <td class="band" th:text="${list.band}"></td>
+        <td th:text="${list.songname}"></td>
+        <td th:text="${list.album}"></td>
+        <td class="year" th:text="${list.releasedate}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
